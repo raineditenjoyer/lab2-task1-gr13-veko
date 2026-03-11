@@ -90,4 +90,39 @@ void inputArray(int **arr, int *n) {
 		}
 }
 
+int main() {
+		int choice;
+		int *arr = NULL;
+		int n = 0;
+
+		printf("Программа для поиска чисел с максимальной суммой цифр\n");
+		printf("====================================================\n\n");
+
+		printf("Выберите режим работы:\n");
+		printf("1. Демонстрация на тестовом массиве\n");
+		printf("2. Ввод данных с клавиатуры\n");
+		printf("Ваш выбор: ");
+		scanf("%d", &choice);
+
+		if (choice == 1) {
+				demonstrateProgram();
+		} else if (choice == 2) {
+				inputArray(&arr, &n);
+
+				if (arr != NULL && n > 0) {
+						printf("\nВведенный массив:\n");
+						for (int i = 0; i < n; i++) {
+								printf("%d ", arr[i]);
+						}
+						printf("\n\n");
+
+						findNumbersWithMaxDigitSum(arr, n);
+						free(arr);
+				}
+		} else {
+				printf("Неверный выбор\n");
+		}
+
+		return 0;
+}
 	
