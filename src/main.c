@@ -42,4 +42,23 @@ void findNumbersWithMaxDigitSum(int arr[], int n) {
 		}
 		printf("\n");
 }
+
+void demonstrateProgram() {
+		int arr[] = {123, 45, 678, 91, 234, 567, 89, 111};
+		int n = sizeof(arr) / sizeof(arr[0]);
+
+		printf("Исходный массив:\n");
+		for (int i = 0; i < n; i++) {
+				printf("%d ", arr[i]);
+		}
+		printf("\n\n");
+
+		printf("Суммы цифр для каждого числа:\n");
+		for (int i = 0; i < n; i++) {
+				printf("%d -> %d\n", arr[i], sumOfDigits(arr[i]));
+		}
+		printf("\n");
+
+		findNumbersWithMaxDigitSum(arr, n);
+}
 	
