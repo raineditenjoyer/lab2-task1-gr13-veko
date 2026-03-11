@@ -61,4 +61,33 @@ void demonstrateProgram() {
 
 		findNumbersWithMaxDigitSum(arr, n);
 }
+
+void inputArray(int **arr, int *n) {
+		printf("Введите размер массива: ");
+		scanf("%d", n);
+
+		if (*n <= 0) {
+				printf("Некорректный размер массива\n");
+				*arr = NULL;
+				return;
+		}
+
+		*arr = (int*)malloc(*n * sizeof(int));
+		if (*arr == NULL) {
+				printf("Ошибка выделения памяти\n");
+				*n = 0;
+				return;
+		}
+
+		printf("Введите %d натуральных чисел:\n", *n);
+		for (int i = 0; i < *n; i++) {
+				printf("arr[%d] = ", i);
+				scanf("%d", &(*arr)[i]);
+				while ((*arr)[i] <= 0) {
+						printf("Ошибка! Введите положительное число: ");
+						scanf("%d", &(*arr)[i]);
+				}
+		}
+}
+
 	
